@@ -39,14 +39,15 @@ async function checkWeather(city) {
         humidity.innerHTML = `${weatherData.main.humidity}%`;
         windSpeed.innerHTML = `${weatherData.wind.speed}Km/H`;
 
-        const weatherImageMap = {
-            'Haze': '/haze.png',
-            'Clouds': '/cloud.png',
-            'Clear': '/clear.png',
-            'Rain': '/rain.png',
-            'Mist': '/mist.png',
-            'Snow': '/snow.png'
-        };
+       const weatherImageMap = {
+    'Haze': 'https://Senapati5.github.io/clock_weather/haze.png',
+    'Clouds': 'https://Senapati5.github.io/clock_weather/cloud.png',
+    'Clear': 'https://Senapati5.github.io/clock_weather/clear.png',
+    'Rain': 'https://Senapati5.github.io/clock_weather/rain.png',
+    'Mist': 'https://Senapati5.github.io/clock_weather/mist.png',
+    'Snow': 'https://Senapati5.github.io/clock_weather/snow.png'
+};
+
         weatherImg.src = weatherImageMap[weatherData.weather[0].main] || '/assets/default.png';
 
         const { lon, lat } = weatherData.coord;
