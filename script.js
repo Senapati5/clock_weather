@@ -7,7 +7,6 @@ const humidity = document.getElementById('humidity');
 const windSpeed = document.getElementById('wind-speed');
 const locationNotFound = document.querySelector('.location-not-found');
 const weatherBody = document.querySelector('.weather-body');
-const currentDateElement = document.getElementById('current-date');
 const currentTimeElement = document.getElementById('current-time');
 
 let hr = document.getElementById('hour');
@@ -41,11 +40,12 @@ async function checkWeather(city) {
         windSpeed.innerHTML = `${weatherData.wind.speed}Km/H`;
 
         const weatherImageMap = {
-            'Clouds': 'cloud.png',
-            'Clear': 'clear.png',
-            'Rain': 'rain.png',
-            'Mist': 'mist.png',
-            'Snow': 'snow.png'
+            'Haze': '/assets/haze.png',
+            'Clouds': '/assets/cloud.png',
+            'Clear': '/assets/clear.png',
+            'Rain': '/assets/rain.png',
+            'Mist': '/assets/mist.png',
+            'Snow': '/assets/snow.png'
         };
         weatherImg.src = weatherImageMap[weatherData.weather[0].main] || '/assets/default.png';
 
@@ -70,17 +70,10 @@ async function getTimeZone(lat, lon) {
 
         timeZoneOffset = timezoneData.gmtOffset * 1000; // Convert to milliseconds
         const localTime = new Date(Date.now() + timeZoneOffset);
-        displayDateTime(localTime);
         startClock();
     } catch (error) {
         console.error("Error fetching timezone data:", error);
     }
-}
-
-function displayDateTime(date) {
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    currentDateElement.textContent = `Date: ${date.toLocaleDateString(undefined, options)}`;
-    currentTimeElement.textContent = `Time: ${date.toLocaleTimeString()}`;
 }
 
 function startClock() {
