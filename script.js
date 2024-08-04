@@ -40,12 +40,12 @@ async function checkWeather(city) {
         windSpeed.innerHTML = `${weatherData.wind.speed}Km/H`;
 
         const weatherImageMap = {
-            'Haze': '/assets/haze.png',
-            'Clouds': '/assets/cloud.png',
-            'Clear': '/assets/clear.png',
-            'Rain': '/assets/rain.png',
-            'Mist': '/assets/mist.png',
-            'Snow': '/assets/snow.png'
+            'Haze': 'haze.png',
+            'Clouds': 'cloud.png',
+            'Clear': 'clear.png',
+            'Rain': 'rain.png',
+            'Mist': 'mist.png',
+            'Snow': 'snow.png'
         };
         weatherImg.src = weatherImageMap[weatherData.weather[0].main] || '/assets/default.png';
 
