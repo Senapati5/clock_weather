@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -46,7 +47,19 @@
                 </div>
             </div>
             <div class="date-time">
-                <p id="current-date">Date: </p>
+            <p id="current-date"></p>
+
+            <script>
+                function displayDate() {
+                    const today = new Date();
+                    const dateString = today.toDateString(); // Format the date as a string
+                    document.getElementById('current-date').textContent = `Date: ${dateString}`;
+                }
+        
+                displayDate(); // Call the function to display the date
+            </script>
+            </div>
+            <div class="date-time">
                 <p id="current-time">Time: </p>
             </div>
         </div>
@@ -78,8 +91,6 @@
           <span style="--i: 12"><b>12</b></span>
         </div>
     </div>
-
-    
 
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/595a890311.js" crossorigin="anonymous"></script>
