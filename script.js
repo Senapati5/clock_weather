@@ -39,16 +39,16 @@ async function checkWeather(city) {
         humidity.innerHTML = `${weatherData.main.humidity}%`;
         windSpeed.innerHTML = `${weatherData.wind.speed}Km/H`;
 
-       const weatherImageMap = {
-    // 'Haze': '/haze.png',
-    'Clouds': '/cloud.png',
-    'Clear': '/clear.png',
-    'Rain': '/rain.png',
-    'Mist': '/mist.png',
-    'Snow': '/snow.png'
-};
+//        const weatherImageMap = {
+//     // 'Haze': '/haze.png',
+//     'Clouds': '/cloud.png',
+//     'Clear': '/clear.png',
+//     'Rain': '/rain.png',
+//     'Mist': '/mist.png',
+//     'Snow': '/snow.png'
+// };
 
-        weatherImg.src = weatherImageMap[weatherData.weather[0].main] || '/default.png';
+//         weatherImg.src = weatherImageMap[weatherData.weather[0].main] || '/default.png';
 
         const { lon, lat } = weatherData.coord;
         await getTimeZone(lat, lon);
